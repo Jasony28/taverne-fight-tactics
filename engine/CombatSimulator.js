@@ -456,6 +456,7 @@ class Combat {
     this.emit('DAMAGE', {
       src: src ? src.uid : null, uid: tgt.uid, amount: Math.round(dmg), dtype: type === 'true_bonus' ? 'true' : type,
       crit, spell: Boolean(opts.spell), hp: Math.max(0, Math.round(tgt.hp)), shield: Math.round(this.shieldTotal(tgt)),
+      mana: Math.round(tgt.mana),
     });
 
     if (src && src.alive) this.afterDealDamage(src, tgt, dmg, opts, hadShield);
@@ -615,14 +616,13 @@ class Combat {
   attack(u, tgt) {
     u.attacks += 1;
     const ranged = u.range > 1;
-    if (ranged) this.emit('PROJECTILE', { uid: u.uid, target: tgt.uid });
-    this.emit('ATTACK', { uid: u.uid, target: tgt.uid });
-
     let mana = this.cfg.mana_per_attack;
     const moa = this.hasEffect(u, 'mana_on_attack');
     if (moa) mana += moa.params.bonus_mana;
     if (this.overtime) mana *= 1 + this.ot.mana_gen_bonus;
     if (u.manaMax > 0 && !u.summon) u.mana = Math.min(u.manaMax * 1.5, u.mana + mana);
+    if (ranged) this.emit('PROJECTILE', { uid: u.uid, target: tgt.uid });
+    this.emit('ATTACK', { uid: u.uid, target: tgt.uid, mana: Math.round(u.mana) });
 
     this.dealDamage(u, tgt, this.adOf(u), 'physical', { attack: true });
 
@@ -750,6 +750,7 @@ class Combat {
       if (e.id === 'on_cast_as_buff') this.addTemp(u, 'as_pct', e.params.bonus_as, e.params.duration_sec, 'sieste');
       if (e.id === 'mana_reduction_and_refund') u.mana = e.params.mana_after_cast;
     }
+    this.emit('MANA', { uid: u.uid, mana: Math.round(u.mana) });
     void mainTarget;
   }
 
@@ -845,6 +846,7 @@ class Combat {
             const extra = Math.round(u.maxHp * p.hp_pct);
             u.maxHp += extra;
             u.hp += extra;
+            this.emit('MAXHP', { uid: u.uid, maxHp: u.maxHp, hp: u.hp });
             break;
           }
           case 'mana_reduction_and_refund':
@@ -865,6 +867,7 @@ class Combat {
                 else if (k === 'hp') {
                   u.maxHp += v;
                   u.hp += v;
+                  this.emit('MAXHP', { uid: u.uid, maxHp: u.maxHp, hp: u.hp });
                 } else u[k] = (u[k] || 0) + v;
               }
             }

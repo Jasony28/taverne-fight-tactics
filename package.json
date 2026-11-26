@@ -8,9 +8,15 @@
     "start": "node server.js",
     "test": "node test/rules.test.js && node test/fullgame.test.js"
   },
-  "engines": { "node": ">=18" },
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "express": "5.1.0",
-    "socket.io": "4.8.1"
+    "socket.io": "4.8.1",
+    "ws": "8.23.0"
+  },
+  "devDependencies": {
+    "socket.io-client": "4.8.1"
   }
 }
