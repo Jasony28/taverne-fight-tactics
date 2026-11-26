@@ -1,0 +1,35 @@
+{
+  "_note": "Monstres neutres des manches PvE. Noms et stats modifiables librement.",
+  "monsters": {
+    "rat_de_cave":      { "name": "Rat de Cave",        "hp": 380,  "ad": 30, "armor": 10, "mr": 10, "attack_speed": 0.60, "range": 1 },
+    "pigeon_voleur":    { "name": "Pigeon Voleur",      "hp": 300,  "ad": 38, "armor": 5,  "mr": 5,  "attack_speed": 0.70, "range": 3 },
+    "videur_grognon":   { "name": "Videur Grognon",     "hp": 900,  "ad": 45, "armor": 35, "mr": 20, "attack_speed": 0.60, "range": 1 },
+    "loup_garou_ivre":  { "name": "Loup-Garou Ivre",    "hp": 1400, "ad": 75, "armor": 40, "mr": 40, "attack_speed": 0.75, "range": 1 },
+    "dragon_du_comptoir": { "name": "Dragon du Comptoir", "hp": 3200, "ad": 120, "armor": 60, "mr": 60, "attack_speed": 0.70, "range": 2 },
+    "huissier_maudit":  { "name": "Huissier Maudit",    "hp": 5500, "ad": 170, "armor": 80, "mr": 80, "attack_speed": 0.75, "range": 2 }
+  },
+  "rounds": {
+    "1-2": [ { "id": "rat_de_cave", "row": 0, "col": 2 }, { "id": "rat_de_cave", "row": 0, "col": 4 } ],
+    "1-3": [ { "id": "rat_de_cave", "row": 0, "col": 2 }, { "id": "rat_de_cave", "row": 0, "col": 4 }, { "id": "pigeon_voleur", "row": 3, "col": 3 } ],
+    "1-4": [ { "id": "videur_grognon", "row": 0, "col": 3 }, { "id": "pigeon_voleur", "row": 3, "col": 1 }, { "id": "pigeon_voleur", "row": 3, "col": 5 } ],
+    "boss_by_stage": {
+      "2": [ { "id": "videur_grognon", "row": 0, "col": 2 }, { "id": "videur_grognon", "row": 0, "col": 4 }, { "id": "pigeon_voleur", "row": 3, "col": 3 } ],
+      "3": [ { "id": "loup_garou_ivre", "row": 0, "col": 2 }, { "id": "loup_garou_ivre", "row": 0, "col": 4 }, { "id": "videur_grognon", "row": 1, "col": 3 } ],
+      "4": [ { "id": "dragon_du_comptoir", "row": 0, "col": 3 } ],
+      "5": [ { "id": "dragon_du_comptoir", "row": 0, "col": 2 }, { "id": "loup_garou_ivre", "row": 0, "col": 4 }, { "id": "loup_garou_ivre", "row": 1, "col": 3 } ],
+      "default": [ { "id": "huissier_maudit", "row": 0, "col": 3 }, { "id": "dragon_du_comptoir", "row": 1, "col": 2 } ]
+    }
+  },
+  "loot": {
+    "per_kill": [
+      { "weight": 45, "type": "gold", "min": 1, "max": 3 },
+      { "weight": 35, "type": "component" },
+      { "weight": 20, "type": "champion", "costs": [1, 2] }
+    ],
+    "boss_bonus": [
+      { "weight": 50, "type": "component" },
+      { "weight": 25, "type": "combined" },
+      { "weight": 25, "type": "gold", "min": 4, "max": 8 }
+    ]
+  }
+}

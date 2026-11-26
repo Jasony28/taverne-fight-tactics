@@ -1,0 +1,394 @@
+[
+  {
+    "id": "ordre_chope",
+    "name": "L'Ordre de la Chope",
+    "category": "origin",
+    "description": "En début de combat, les membres de l'Ordre trinquent pour gagner un bouclier et une régénération de PV pendant 5 secondes.",
+    "icon_path": "assets/traits/ordre_chope.png",
+    "breakpoints": [
+      {
+        "count": 2,
+        "scope": "trait_units",
+        "bonuses": {},
+        "effect_id": "tavern_toast_shield",
+        "effect_params": {
+          "shield_amount": 200,
+          "regen_per_sec": 20,
+          "duration_sec": 5
+        }
+      },
+      {
+        "count": 4,
+        "scope": "trait_units",
+        "bonuses": {},
+        "effect_id": "tavern_toast_shield",
+        "effect_params": {
+          "shield_amount": 450,
+          "regen_per_sec": 45,
+          "duration_sec": 5
+        }
+      }
+    ]
+  },
+  {
+    "id": "confrerie_flemme_feu",
+    "name": "La Confrérie du Flemme-Feu",
+    "category": "origin",
+    "description": "Les adeptes du moindre effort gagnent des PV bonus et génèrent de l'or supplémentaire à la fin de chaque manche sans se fatiguer.",
+    "icon_path": "assets/traits/confrerie_flemme_feu.png",
+    "breakpoints": [
+      {
+        "count": 2,
+        "scope": "trait_units",
+        "bonuses": {
+          "hp": 100
+        },
+        "effect_id": "lazy_gold_gen",
+        "effect_params": {
+          "min_gold": 1,
+          "max_gold": 2
+        }
+      },
+      {
+        "count": 4,
+        "scope": "trait_units",
+        "bonuses": {
+          "hp": 250
+        },
+        "effect_id": "lazy_gold_gen",
+        "effect_params": {
+          "min_gold": 3,
+          "max_gold": 4
+        }
+      }
+    ]
+  },
+  {
+    "id": "seigneurs_bitume",
+    "name": "Les Seigneurs du Bitume",
+    "category": "origin",
+    "description": "Les Seigneurs démarrent pied au plancher : bonus de vitesse d'attaque, qui accélère encore chaque seconde du combat.",
+    "icon_path": "assets/traits/seigneurs_bitume.png",
+    "breakpoints": [
+      {
+        "count": 2,
+        "scope": "trait_units",
+        "bonuses": {
+          "attack_speed": 0.15
+        },
+        "effect_id": "turbo_ramp_as",
+        "effect_params": {
+          "as_per_sec": 0.05,
+          "max_stacks": 15
+        }
+      },
+      {
+        "count": 4,
+        "scope": "trait_units",
+        "bonuses": {
+          "attack_speed": 0.3
+        },
+        "effect_id": "turbo_ramp_as",
+        "effect_params": {
+          "as_per_sec": 0.1,
+          "max_stacks": 15
+        }
+      }
+    ]
+  },
+  {
+    "id": "clan_mauvais_perdants",
+    "name": "Le Clan des Mauvais Perdants",
+    "category": "origin",
+    "description": "Sous 50 % de PV, les Mauvais Perdants entrent en rage : bonus d'AD, d'AP et vol de vie sur tous les dégâts.",
+    "icon_path": "assets/traits/clan_mauvais_perdants.png",
+    "breakpoints": [
+      {
+        "count": 2,
+        "scope": "trait_units",
+        "bonuses": {},
+        "effect_id": "rage_below_half_hp",
+        "effect_params": {
+          "hp_threshold_pct": 0.5,
+          "ad_pct": 0.3,
+          "ap_pct": 0.3,
+          "omnivamp_pct": 0.2
+        }
+      },
+      {
+        "count": 4,
+        "scope": "trait_units",
+        "bonuses": {},
+        "effect_id": "rage_below_half_hp",
+        "effect_params": {
+          "hp_threshold_pct": 0.5,
+          "ad_pct": 0.65,
+          "ap_pct": 0.65,
+          "omnivamp_pct": 0.35
+        }
+      }
+    ]
+  },
+  {
+    "id": "guilde_fantomes_minuit",
+    "name": "La Guilde des Fantômes de Minuit",
+    "category": "origin",
+    "description": "Les Fantômes commencent avec du mana bonus et leurs 3 premières attaques de base infligent des dégâts bruts supplémentaires.",
+    "icon_path": "assets/traits/guilde_fantomes_minuit.png",
+    "breakpoints": [
+      {
+        "count": 2,
+        "scope": "trait_units",
+        "bonuses": {
+          "mana_start": 20
+        },
+        "effect_id": "midnight_ambush_true_dmg",
+        "effect_params": {
+          "attack_count": 3,
+          "true_damage": 40
+        }
+      },
+      {
+        "count": 4,
+        "scope": "trait_units",
+        "bonuses": {
+          "mana_start": 40
+        },
+        "effect_id": "midnight_ambush_true_dmg",
+        "effect_params": {
+          "attack_count": 3,
+          "true_damage": 90
+        }
+      }
+    ]
+  },
+  {
+    "id": "tribu_banquet_royal",
+    "name": "La Tribu du Banquet Royal",
+    "category": "origin",
+    "description": "Toute l'équipe gagne des PV, et après 8 secondes de combat un festin soigne toutes les unités alliées.",
+    "icon_path": "assets/traits/tribu_banquet_royal.png",
+    "breakpoints": [
+      {
+        "count": 2,
+        "scope": "full_team",
+        "bonuses": {
+          "hp": 120
+        },
+        "effect_id": "royal_feast_heal",
+        "effect_params": {
+          "delay_sec": 8,
+          "heal_amount": 150
+        }
+      },
+      {
+        "count": 4,
+        "scope": "full_team",
+        "bonuses": {
+          "hp": 280
+        },
+        "effect_id": "royal_feast_heal",
+        "effect_params": {
+          "delay_sec": 8,
+          "heal_amount": 350
+        }
+      }
+    ]
+  },
+  {
+    "id": "createur_supreme",
+    "name": "Le Créateur Suprême",
+    "category": "origin",
+    "description": "Origine unique de l'auteur : bénit les alliés adjacents avec +20 % d'AD, d'AP et de vitesse d'attaque pour tout le combat.",
+    "icon_path": "assets/traits/createur_supreme.png",
+    "breakpoints": [
+      {
+        "count": 1,
+        "scope": "trait_units",
+        "bonuses": {},
+        "effect_id": "creator_blessing_adjacent",
+        "effect_params": {
+          "radius_hex": 1,
+          "ad_pct": 0.2,
+          "ap_pct": 0.2,
+          "attack_speed_pct": 0.2
+        }
+      }
+    ]
+  },
+  {
+    "id": "murailles_granit",
+    "name": "Murailles de Granit",
+    "category": "class",
+    "description": "Les Murailles gagnent de l'Armure et de la Résistance Magique.",
+    "icon_path": "assets/traits/murailles_granit.png",
+    "breakpoints": [
+      {
+        "count": 2,
+        "scope": "trait_units",
+        "bonuses": {
+          "armor": 30,
+          "mr": 30
+        },
+        "effect_id": null,
+        "effect_params": {}
+      },
+      {
+        "count": 4,
+        "scope": "trait_units",
+        "bonuses": {
+          "armor": 70,
+          "mr": 70
+        },
+        "effect_id": null,
+        "effect_params": {}
+      }
+    ]
+  },
+  {
+    "id": "bagarreurs_taverne",
+    "name": "Bagarreurs de Taverne",
+    "category": "class",
+    "description": "Les Bagarreurs gagnent des PV et de l'AD.",
+    "icon_path": "assets/traits/bagarreurs_taverne.png",
+    "breakpoints": [
+      {
+        "count": 2,
+        "scope": "trait_units",
+        "bonuses": {
+          "hp": 200,
+          "ad": 15
+        },
+        "effect_id": null,
+        "effect_params": {}
+      },
+      {
+        "count": 4,
+        "scope": "trait_units",
+        "bonuses": {
+          "hp": 450,
+          "ad": 40
+        },
+        "effect_id": null,
+        "effect_params": {}
+      }
+    ]
+  },
+  {
+    "id": "archers_dimanche",
+    "name": "Archers du Dimanche",
+    "category": "class",
+    "description": "Les Archers gagnent de la vitesse d'attaque ; au palier 4, +1 de portée.",
+    "icon_path": "assets/traits/archers_dimanche.png",
+    "breakpoints": [
+      {
+        "count": 2,
+        "scope": "trait_units",
+        "bonuses": {
+          "attack_speed": 0.25
+        },
+        "effect_id": null,
+        "effect_params": {}
+      },
+      {
+        "count": 4,
+        "scope": "trait_units",
+        "bonuses": {
+          "attack_speed": 0.6,
+          "range": 1
+        },
+        "effect_id": null,
+        "effect_params": {}
+      }
+    ]
+  },
+  {
+    "id": "sorciers_chaos",
+    "name": "Sorciers du Chaos",
+    "category": "class",
+    "description": "Les Sorciers gagnent de l'AP et du mana de départ.",
+    "icon_path": "assets/traits/sorciers_chaos.png",
+    "breakpoints": [
+      {
+        "count": 2,
+        "scope": "trait_units",
+        "bonuses": {
+          "ap": 25,
+          "mana_start": 15
+        },
+        "effect_id": null,
+        "effect_params": {}
+      },
+      {
+        "count": 4,
+        "scope": "trait_units",
+        "bonuses": {
+          "ap": 65,
+          "mana_start": 35
+        },
+        "effect_id": null,
+        "effect_params": {}
+      }
+    ]
+  },
+  {
+    "id": "ombres_sournoises",
+    "name": "Ombres Sournoises",
+    "category": "class",
+    "description": "Au début du combat, les Ombres sautent sur la ligne arrière adverse et gagnent des chances et des dégâts critiques.",
+    "icon_path": "assets/traits/ombres_sournoises.png",
+    "breakpoints": [
+      {
+        "count": 2,
+        "scope": "trait_units",
+        "bonuses": {
+          "crit_chance": 0.15,
+          "crit_mult": 0.2
+        },
+        "effect_id": "assassin_backline_leap",
+        "effect_params": {}
+      },
+      {
+        "count": 4,
+        "scope": "trait_units",
+        "bonuses": {
+          "crit_chance": 0.35,
+          "crit_mult": 0.45
+        },
+        "effect_id": "assassin_backline_leap",
+        "effect_params": {}
+      }
+    ]
+  },
+  {
+    "id": "gardiens_bonne_humeur",
+    "name": "Gardiens de la Bonne Humeur",
+    "category": "class",
+    "description": "Toute l'équipe gagne des PV, de l'Armure et de la Résistance Magique.",
+    "icon_path": "assets/traits/gardiens_bonne_humeur.png",
+    "breakpoints": [
+      {
+        "count": 2,
+        "scope": "full_team",
+        "bonuses": {
+          "hp": 150,
+          "armor": 15,
+          "mr": 15
+        },
+        "effect_id": null,
+        "effect_params": {}
+      },
+      {
+        "count": 4,
+        "scope": "full_team",
+        "bonuses": {
+          "hp": 350,
+          "armor": 35,
+          "mr": 35
+        },
+        "effect_id": null,
+        "effect_params": {}
+      }
+    ]
+  }
+]

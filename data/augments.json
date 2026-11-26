@@ -1,0 +1,342 @@
+[
+  {
+    "id": "pourboire_de_walid",
+    "name": "Le Pourboire de Walid",
+    "tier": "silver",
+    "description": "Walid laisse traîner sa petite monnaie : vous recevez immédiatement 10 PO.",
+    "trigger": "immediate",
+    "effect_type": "grant_gold",
+    "params": {
+      "amount": 10
+    }
+  },
+  {
+    "id": "kebab_quatre_heures",
+    "name": "Kebab de 4h du Mat'",
+    "tier": "silver",
+    "description": "Un grec salvateur remet tout le monde debout : toute votre équipe gagne +160 PV au début du combat.",
+    "trigger": "combat_start",
+    "effect_type": "team_stat",
+    "params": {
+      "scope": "full_team",
+      "bonuses": {
+        "hp": 160
+      }
+    }
+  },
+  {
+    "id": "alerte_au_balai",
+    "name": "Alerte au Balai !",
+    "tier": "silver",
+    "description": "Comme Shadow devant un balai, toute votre équipe panique et attaque plus vite : +15% Vitesse d'attaque.",
+    "trigger": "combat_start",
+    "effect_type": "team_stat",
+    "params": {
+      "scope": "full_team",
+      "bonuses": {
+        "attack_speed": 0.15
+      }
+    }
+  },
+  {
+    "id": "pave_sur_facebook",
+    "name": "Pavé sur Facebook",
+    "tier": "silver",
+    "description": "Philippe lance un débat houleux en majuscules : toute votre équipe gagne +15 AP et +10 Mana de départ.",
+    "trigger": "combat_start",
+    "effect_type": "team_stat",
+    "params": {
+      "scope": "full_team",
+      "bonuses": {
+        "ap": 15,
+        "mana_start": 10
+      }
+    }
+  },
+  {
+    "id": "planning_de_celine",
+    "name": "Planning Millimétré de Céline",
+    "tier": "silver",
+    "description": "Tout est noté au quart d'heure près : vous gagnez immédiatement 12 XP.",
+    "trigger": "immediate",
+    "effect_type": "grant_xp",
+    "params": {
+      "amount": 12
+    }
+  },
+  {
+    "id": "ticket_de_grattage",
+    "name": "Booster à l'Unité",
+    "tier": "silver",
+    "description": "David jure que c'est le dernier paquet : vous recevez 1 relance de boutique gratuite au début de chaque manche.",
+    "trigger": "round_start",
+    "effect_type": "shop_modifier",
+    "params": {
+      "free_rerolls_per_round": 1
+    }
+  },
+  {
+    "id": "sieste_sur_le_canape",
+    "name": "Sieste à 22h",
+    "tier": "silver",
+    "description": "Vous économisez votre énergie pendant que les autres s'agitent : vous gagnez +3 PO par manche pendant 4 manches.",
+    "trigger": "round_start",
+    "effect_type": "grant_gold",
+    "params": {
+      "amount_per_round": 3,
+      "rounds": 4
+    }
+  },
+  {
+    "id": "fauteuil_du_patriarche",
+    "name": "Fauteuil de Jean-Marie",
+    "tier": "silver",
+    "description": "Personne ne bouge du salon : toute votre équipe gagne +18 Armure et +18 Résistance Magique.",
+    "trigger": "combat_start",
+    "effect_type": "team_stat",
+    "params": {
+      "scope": "full_team",
+      "bonuses": {
+        "armor": 18,
+        "mr": 18
+      }
+    }
+  },
+  {
+    "id": "atout_sous_la_table",
+    "name": "Atout Caché sous la Table",
+    "tier": "silver",
+    "description": "Un petit coup de pouce pas très réglementaire : toute votre équipe gagne +15% Chances de critique et +10 AD.",
+    "trigger": "combat_start",
+    "effect_type": "team_stat",
+    "params": {
+      "scope": "full_team",
+      "bonuses": {
+        "crit_chance": 0.15,
+        "ad": 10
+      }
+    }
+  },
+  {
+    "id": "fond_de_verre_recupere",
+    "name": "Tournée des Fonds de Verre",
+    "tier": "silver",
+    "description": "Les unités de L'Ordre de la Chope ne gâchent rien : elles gagnent +220 PV et +15 AD au début du combat.",
+    "trigger": "combat_start",
+    "effect_type": "team_stat",
+    "params": {
+      "scope": "trait_units",
+      "trait_id": "ordre_chope",
+      "bonuses": {
+        "hp": 220,
+        "ad": 15
+      }
+    }
+  },
+  {
+    "id": "embleme_ordre_chope",
+    "name": "Tournée de l'Ordre",
+    "tier": "gold",
+    "description": "Vous recevez 1 Emblème de L'Ordre de la Chope à équiper sur un champion.",
+    "trigger": "immediate",
+    "effect_type": "trait_emblem",
+    "params": {
+      "trait_id": "ordre_chope",
+      "count": 1
+    }
+  },
+  {
+    "id": "embleme_confrerie_flemme_feu",
+    "name": "Carte de Membre du Canapé",
+    "tier": "gold",
+    "description": "Vous recevez 1 Emblème de La Confrérie du Flemme-Feu à équiper sur un champion.",
+    "trigger": "immediate",
+    "effect_type": "trait_emblem",
+    "params": {
+      "trait_id": "confrerie_flemme_feu",
+      "count": 1
+    }
+  },
+  {
+    "id": "embleme_seigneurs_bitume",
+    "name": "Plein d'Essence Offert",
+    "tier": "gold",
+    "description": "Vous recevez 1 Emblème des Seigneurs du Bitume à équiper sur un champion.",
+    "trigger": "immediate",
+    "effect_type": "trait_emblem",
+    "params": {
+      "trait_id": "seigneurs_bitume",
+      "count": 1
+    }
+  },
+  {
+    "id": "embleme_clan_mauvais_perdants",
+    "name": "Table de Belote Renversée",
+    "tier": "gold",
+    "description": "Vous recevez 1 Emblème du Clan des Mauvais Perdants à équiper sur un champion.",
+    "trigger": "immediate",
+    "effect_type": "trait_emblem",
+    "params": {
+      "trait_id": "clan_mauvais_perdants",
+      "count": 1
+    }
+  },
+  {
+    "id": "embleme_guilde_fantomes_minuit",
+    "name": "Message Laissé en « Vu »",
+    "tier": "gold",
+    "description": "Vous recevez 1 Emblème de La Guilde des Fantômes de Minuit à équiper sur un champion.",
+    "trigger": "immediate",
+    "effect_type": "trait_emblem",
+    "params": {
+      "trait_id": "guilde_fantomes_minuit",
+      "count": 1
+    }
+  },
+  {
+    "id": "embleme_tribu_banquet_royal",
+    "name": "Invitation au Banquet Royal",
+    "tier": "gold",
+    "description": "Vous recevez 1 Emblème de La Tribu du Banquet Royal à équiper sur un champion.",
+    "trigger": "immediate",
+    "effect_type": "trait_emblem",
+    "params": {
+      "trait_id": "tribu_banquet_royal",
+      "count": 1
+    }
+  },
+  {
+    "id": "loyer_en_boosters",
+    "name": "Loyer en Boosters Pokémon",
+    "tier": "gold",
+    "description": "David claque tout dans les tirages : le coût de relance de votre boutique passe définitivement à 1 PO.",
+    "trigger": "immediate",
+    "effect_type": "shop_modifier",
+    "params": {
+      "reroll_cost": 1
+    }
+  },
+  {
+    "id": "fiche_de_paie_walid",
+    "name": "Fiche de Paie de Walid",
+    "tier": "gold",
+    "description": "Le virement mensuel tombe enfin : vous recevez immédiatement 22 PO.",
+    "trigger": "immediate",
+    "effect_type": "grant_gold",
+    "params": {
+      "amount": 22
+    }
+  },
+  {
+    "id": "desolee_jai_raid",
+    "name": "« Désolée, J'ai Raid »",
+    "tier": "gold",
+    "description": "Cynthia ne décroche plus le téléphone et enchaîne les parties : vous gagnez +3 XP au début de chaque manche.",
+    "trigger": "round_start",
+    "effect_type": "grant_xp",
+    "params": {
+      "amount_per_round": 3
+    }
+  },
+  {
+    "id": "cicatrice_du_cutter",
+    "name": "Cuir Endurci au Cutter",
+    "tier": "gold",
+    "description": "Inspirée par Nicolas, toute votre équipe encaisse sans broncher : +260 PV, +25 Armure et +25 Résistance Magique.",
+    "trigger": "combat_start",
+    "effect_type": "team_stat",
+    "params": {
+      "scope": "full_team",
+      "bonuses": {
+        "hp": 260,
+        "armor": 25,
+        "mr": 25
+      }
+    }
+  },
+  {
+    "id": "triple_salaire_mensuel",
+    "name": "Triple Salaire de Nicolas",
+    "tier": "prismatic",
+    "description": "Le jackpot absolu : vous recevez immédiatement 40 PO pour acheter tout le lobby.",
+    "trigger": "immediate",
+    "effect_type": "grant_gold",
+    "params": {
+      "amount": 40
+    }
+  },
+  {
+    "id": "display_premiere_edition",
+    "name": "Display Dracaufeu 1ère Édition",
+    "tier": "prismatic",
+    "description": "Un tirage légendaire : +10% de chances de trouver des champions Coût 4 et +5% pour les Coût 5 en boutique.",
+    "trigger": "immediate",
+    "effect_type": "shop_modifier",
+    "params": {
+      "cost_odds_bonus": {
+        "4": 0.1,
+        "5": 0.05
+      }
+    }
+  },
+  {
+    "id": "nouveau_mec_chaque_combat",
+    "name": "Changement Mensuel Accéléré",
+    "tier": "prismatic",
+    "description": "Inspirée par Laurine, votre équipe fonce tête baissée : +35% Vitesse d'attaque, +25% Chances de critique et +0,30 Dégâts critiques.",
+    "trigger": "combat_start",
+    "effect_type": "team_stat",
+    "params": {
+      "scope": "full_team",
+      "bonuses": {
+        "attack_speed": 0.35,
+        "crit_chance": 0.25,
+        "crit_mult": 0.3
+      }
+    }
+  },
+  {
+    "id": "rage_belote_ultime",
+    "name": "Colère Ultime de la Belote",
+    "tier": "prismatic",
+    "description": "Élodie balance la table par la fenêtre : toute votre équipe gagne +35 AD, +45 AP et +30 Mana de départ.",
+    "trigger": "combat_start",
+    "effect_type": "team_stat",
+    "params": {
+      "scope": "full_team",
+      "bonuses": {
+        "ad": 35,
+        "ap": 45,
+        "mana_start": 30
+      }
+    }
+  },
+  {
+    "id": "trahison_transfrontaliere",
+    "name": "Expatriation Express en France",
+    "tier": "prismatic",
+    "description": "Vous prenez une longueur d'avance sur tout le monde : chaque champion ennemi éliminé en combat vous rapporte +1 XP.",
+    "trigger": "on_kill",
+    "effect_type": "grant_xp",
+    "params": {
+      "amount": 1
+    }
+  },
+  {
+    "id": "soiree_open_bar_eternel",
+    "name": "Open Bar jusqu'à 6h du Mat'",
+    "tier": "prismatic",
+    "description": "Toute votre équipe devient increvable et tire depuis le comptoir : +400 PV, +1 Portée et +25 Armure/RM.",
+    "trigger": "combat_start",
+    "effect_type": "team_stat",
+    "params": {
+      "scope": "full_team",
+      "bonuses": {
+        "hp": 400,
+        "range": 1,
+        "armor": 25,
+        "mr": 25
+      }
+    }
+  }
+]

@@ -1,0 +1,816 @@
+{
+  "components": [
+    {
+      "id": "poele_fonte",
+      "name": "Poêle en Fonte",
+      "icon_path": "assets/items/poele_fonte.png",
+      "stats": {
+        "ad": 10
+      }
+    },
+    {
+      "id": "telecommande_universelle",
+      "name": "Télécommande Universelle",
+      "icon_path": "assets/items/telecommande_universelle.png",
+      "stats": {
+        "ap": 15
+      }
+    },
+    {
+      "id": "canette_energy",
+      "name": "Canette d'Energy Drink",
+      "icon_path": "assets/items/canette_energy.png",
+      "stats": {
+        "attack_speed": 0.15
+      }
+    },
+    {
+      "id": "couvercle_tupperware",
+      "name": "Couvercle de Tupperware",
+      "icon_path": "assets/items/couvercle_tupperware.png",
+      "stats": {
+        "armor": 20
+      }
+    },
+    {
+      "id": "casque_anti_bruit",
+      "name": "Casque Anti-Bruit",
+      "icon_path": "assets/items/casque_anti_bruit.png",
+      "stats": {
+        "mr": 20
+      }
+    },
+    {
+      "id": "gros_coussin",
+      "name": "Gros Coussin de Canapé",
+      "icon_path": "assets/items/gros_coussin.png",
+      "stats": {
+        "hp": 150
+      }
+    },
+    {
+      "id": "tasse_cafe",
+      "name": "Tasse de Café Serré",
+      "icon_path": "assets/items/tasse_cafe.png",
+      "stats": {
+        "mana_start": 15
+      }
+    },
+    {
+      "id": "as_de_pique",
+      "name": "As de Pique Corné",
+      "icon_path": "assets/items/as_de_pique.png",
+      "stats": {
+        "crit_chance": 0.15
+      }
+    }
+  ],
+  "combined": [
+    {
+      "id": "batterie_cuisine",
+      "name": "Batterie de Cuisine Complète",
+      "icon_path": "assets/items/batterie_cuisine.png",
+      "recipe": [
+        "poele_fonte",
+        "poele_fonte"
+      ],
+      "unique": false,
+      "stats": {
+        "ad": 25
+      },
+      "effect_id": "damage_amp_flat",
+      "effect_params": {
+        "amp_pct": 0.12
+      },
+      "description": "Augmente tous les dégâts infligés par le porteur de 12%."
+    },
+    {
+      "id": "baton_zapping_cuisine",
+      "name": "Bâton de Zapping Cuisiné",
+      "icon_path": "assets/items/baton_zapping_cuisine.png",
+      "recipe": [
+        "poele_fonte",
+        "telecommande_universelle"
+      ],
+      "unique": false,
+      "stats": {
+        "ad": 10,
+        "ap": 15
+      },
+      "effect_id": "omnivamp_heal_ally",
+      "effect_params": {
+        "heal_pct": 0.22
+      },
+      "description": "Soigne le porteur et l'allié ayant le moins de PV à hauteur de 22% des dégâts infligés."
+    },
+    {
+      "id": "poele_taurine",
+      "name": "Coup de Poêle Sous Taurine",
+      "icon_path": "assets/items/poele_taurine.png",
+      "recipe": [
+        "poele_fonte",
+        "canette_energy"
+      ],
+      "unique": false,
+      "stats": {
+        "ad": 10,
+        "attack_speed": 0.15
+      },
+      "effect_id": "damage_amp_vs_high_hp",
+      "effect_params": {
+        "hp_threshold": 1400,
+        "amp_pct": 0.25
+      },
+      "description": "Inflige +25% de dégâts supplémentaires aux ennemis ayant plus de 1400 PV max."
+    },
+    {
+      "id": "bouclier_cuisine",
+      "name": "Bouclier de Cuisine",
+      "icon_path": "assets/items/bouclier_cuisine.png",
+      "recipe": [
+        "poele_fonte",
+        "couvercle_tupperware"
+      ],
+      "unique": true,
+      "stats": {
+        "ad": 10,
+        "armor": 20
+      },
+      "effect_id": "low_hp_stealth_cleanse",
+      "effect_params": {
+        "hp_threshold_pct": 0.5,
+        "invuln_sec": 1.5,
+        "bonus_as": 0.2
+      },
+      "description": "Une fois par combat à 50% PV : devient inciblable pendant 1,5s, dissipe les effets négatifs et gagne +20% Vitesse d'attaque."
+    },
+    {
+      "id": "marmite_silencieuse",
+      "name": "Marmite Silencieuse",
+      "icon_path": "assets/items/marmite_silencieuse.png",
+      "recipe": [
+        "poele_fonte",
+        "casque_anti_bruit"
+      ],
+      "unique": false,
+      "stats": {
+        "ad": 10,
+        "mr": 20
+      },
+      "effect_id": "omnivamp_low_hp_shield",
+      "effect_params": {
+        "omnivamp_pct": 0.2,
+        "hp_threshold_pct": 0.4,
+        "shield_hp_pct": 0.25,
+        "duration_sec": 5
+      },
+      "description": "+20% vol de vie sur tous les dégâts. Une fois par combat à 40% PV, gagne un bouclier de 25% PV max pendant 5s."
+    },
+    {
+      "id": "embleme_bagarreurs_taverne",
+      "name": "Emblème : Bagarreurs de Taverne",
+      "icon_path": "assets/items/embleme_bagarreurs_taverne.png",
+      "recipe": [
+        "poele_fonte",
+        "gros_coussin"
+      ],
+      "unique": true,
+      "stats": {
+        "ad": 8,
+        "hp": 120
+      },
+      "effect_id": "grant_trait",
+      "effect_params": {
+        "trait_id": "bagarreurs_taverne"
+      },
+      "description": "Le porteur obtient la classe Bagarreurs de Taverne. Ne peut pas être équipé sur un Bagarreur de Taverne."
+    },
+    {
+      "id": "poele_expresso",
+      "name": "Poêle à Expresso",
+      "icon_path": "assets/items/poele_expresso.png",
+      "recipe": [
+        "poele_fonte",
+        "tasse_cafe"
+      ],
+      "unique": false,
+      "stats": {
+        "ad": 10,
+        "mana_start": 15
+      },
+      "effect_id": "mana_on_attack",
+      "effect_params": {
+        "bonus_mana": 5
+      },
+      "description": "Les attaques de base du porteur génèrent +5 mana supplémentaire."
+    },
+    {
+      "id": "coup_poele_critique",
+      "name": "Coup de Poêle Critique",
+      "icon_path": "assets/items/coup_poele_critique.png",
+      "recipe": [
+        "poele_fonte",
+        "as_de_pique"
+      ],
+      "unique": true,
+      "stats": {
+        "ad": 10,
+        "crit_chance": 0.15
+      },
+      "effect_id": "spell_can_crit",
+      "effect_params": {
+        "bonus_crit_mult": 0.15
+      },
+      "description": "Les sorts du porteur peuvent infliger des coups critiques (+0,15 multiplicateur critique)."
+    },
+    {
+      "id": "telecommande_futur",
+      "name": "Télécommande du Futur",
+      "icon_path": "assets/items/telecommande_futur.png",
+      "recipe": [
+        "telecommande_universelle",
+        "telecommande_universelle"
+      ],
+      "unique": false,
+      "stats": {
+        "ap": 35
+      },
+      "effect_id": "damage_amp_flat",
+      "effect_params": {
+        "amp_pct": 0.15
+      },
+      "description": "Augmente tous les dégâts infligés par le porteur de 15%."
+    },
+    {
+      "id": "zapping_hyperactif",
+      "name": "Zapping Hyperactif",
+      "icon_path": "assets/items/zapping_hyperactif.png",
+      "recipe": [
+        "telecommande_universelle",
+        "canette_energy"
+      ],
+      "unique": false,
+      "stats": {
+        "ap": 15,
+        "attack_speed": 0.15
+      },
+      "effect_id": "on_attack_ramp_as",
+      "effect_params": {
+        "as_per_stack": 0.05,
+        "max_stacks": 20
+      },
+      "description": "Chaque attaque de base confère +5% Vitesse d'attaque jusqu'à la fin du combat (max 20 cumuls)."
+    },
+    {
+      "id": "tupperware_radioactif",
+      "name": "Tupperware Radioactif",
+      "icon_path": "assets/items/tupperware_radioactif.png",
+      "recipe": [
+        "telecommande_universelle",
+        "couvercle_tupperware"
+      ],
+      "unique": false,
+      "stats": {
+        "ap": 15,
+        "armor": 20
+      },
+      "effect_id": "start_shield_then_ap",
+      "effect_params": {
+        "shield_hp_pct": 0.25,
+        "duration_sec": 8,
+        "bonus_ap": 30
+      },
+      "description": "Début de combat : gagne un bouclier de 25% PV max pendant 8s. Une fois brisé ou expiré, gagne +30 AP."
+    },
+    {
+      "id": "brouilleur_wifi",
+      "name": "Brouilleur de Wi-Fi",
+      "icon_path": "assets/items/brouilleur_wifi.png",
+      "recipe": [
+        "telecommande_universelle",
+        "casque_anti_bruit"
+      ],
+      "unique": true,
+      "stats": {
+        "ap": 15,
+        "mr": 20
+      },
+      "effect_id": "aura_shred_mr_zap",
+      "effect_params": {
+        "radius_hex": 2,
+        "mr_shred_pct": 0.3,
+        "zap_per_mana_max": 1.5
+      },
+      "description": "Réduit de 30% la RM des ennemis à 2 cases et leur inflige 150% de leur mana max en dégâts magiques quand ils lancent un sort."
+    },
+    {
+      "id": "canape_micro_onde",
+      "name": "Canapé Micro-Ondé",
+      "icon_path": "assets/items/canape_micro_onde.png",
+      "recipe": [
+        "telecommande_universelle",
+        "gros_coussin"
+      ],
+      "unique": true,
+      "stats": {
+        "ap": 15,
+        "hp": 150
+      },
+      "effect_id": "apply_burn_antiheal",
+      "effect_params": {
+        "source": "spell",
+        "burn_hp_pct_per_sec": 0.02,
+        "antiheal_pct": 0.35,
+        "duration_sec": 6
+      },
+      "description": "Les sorts brûlent les ennemis touchés (2% PV max/s) et réduisent leurs soins reçus de 35% pendant 6s."
+    },
+    {
+      "id": "embleme_sorciers_chaos",
+      "name": "Emblème : Sorciers du Chaos",
+      "icon_path": "assets/items/embleme_sorciers_chaos.png",
+      "recipe": [
+        "telecommande_universelle",
+        "tasse_cafe"
+      ],
+      "unique": true,
+      "stats": {
+        "ap": 12,
+        "mana_start": 12
+      },
+      "effect_id": "grant_trait",
+      "effect_params": {
+        "trait_id": "sorciers_chaos"
+      },
+      "description": "Le porteur obtient la classe Sorciers du Chaos. Ne peut pas être équipé sur un Sorcier du Chaos."
+    },
+    {
+      "id": "zapping_chance",
+      "name": "Zapping de la Chance",
+      "icon_path": "assets/items/zapping_chance.png",
+      "recipe": [
+        "telecommande_universelle",
+        "as_de_pique"
+      ],
+      "unique": true,
+      "stats": {
+        "ap": 15,
+        "crit_chance": 0.15
+      },
+      "effect_id": "spell_can_crit",
+      "effect_params": {
+        "bonus_crit_mult": 0.15
+      },
+      "description": "Les sorts du porteur peuvent infliger des coups critiques (+0,15 multiplicateur critique)."
+    },
+    {
+      "id": "pack_six_monsters",
+      "name": "Pack de 6 Monsters",
+      "icon_path": "assets/items/pack_six_monsters.png",
+      "recipe": [
+        "canette_energy",
+        "canette_energy"
+      ],
+      "unique": true,
+      "stats": {
+        "attack_speed": 0.3
+      },
+      "effect_id": "apply_burn_antiheal",
+      "effect_params": {
+        "source": "attack",
+        "burn_hp_pct_per_sec": 0.02,
+        "antiheal_pct": 0.35,
+        "duration_sec": 4
+      },
+      "description": "Les attaques de base brûlent la cible (2% PV max/s) et réduisent ses soins reçus de 35% pendant 4s."
+    },
+    {
+      "id": "tupperware_pressurise",
+      "name": "Tupperware Pressurisé",
+      "icon_path": "assets/items/tupperware_pressurise.png",
+      "recipe": [
+        "canette_energy",
+        "couvercle_tupperware"
+      ],
+      "unique": false,
+      "stats": {
+        "attack_speed": 0.15,
+        "armor": 20
+      },
+      "effect_id": "titan_stacks",
+      "effect_params": {
+        "ad_per_stack": 2,
+        "ap_per_stack": 2,
+        "max_stacks": 20,
+        "max_bonus_armor": 25,
+        "max_bonus_mr": 25
+      },
+      "description": "Gagne +2 AD et +2 AP en attaquant ou en subissant des dégâts (max 20 cumuls). Au maximum, gagne +25 Armure et +25 RM."
+    },
+    {
+      "id": "mode_tryhard_isole",
+      "name": "Mode Tryhard Isolé",
+      "icon_path": "assets/items/mode_tryhard_isole.png",
+      "recipe": [
+        "canette_energy",
+        "casque_anti_bruit"
+      ],
+      "unique": true,
+      "stats": {
+        "attack_speed": 0.15,
+        "mr": 20
+      },
+      "effect_id": "cc_immune_and_ramp_as",
+      "effect_params": {
+        "immune_sec": 12,
+        "as_per_interval": 0.06,
+        "interval_sec": 2.0
+      },
+      "description": "Immunisé aux étourdissements et ralentissements pendant les 12 premières secondes, et gagne +6% Vitesse d'attaque toutes les 2s."
+    },
+    {
+      "id": "sieste_energisante",
+      "name": "Sieste Énergisante",
+      "icon_path": "assets/items/sieste_energisante.png",
+      "recipe": [
+        "canette_energy",
+        "gros_coussin"
+      ],
+      "unique": false,
+      "stats": {
+        "attack_speed": 0.15,
+        "hp": 150
+      },
+      "effect_id": "on_cast_as_buff",
+      "effect_params": {
+        "bonus_as": 0.4,
+        "duration_sec": 5
+      },
+      "description": "Après chaque lancer de sort, gagne +40% Vitesse d'attaque pendant 5s."
+    },
+    {
+      "id": "arret_cardiaque",
+      "name": "Arrêt Cardiaque",
+      "icon_path": "assets/items/arret_cardiaque.png",
+      "recipe": [
+        "canette_energy",
+        "tasse_cafe"
+      ],
+      "unique": true,
+      "stats": {
+        "attack_speed": 0.15,
+        "mana_start": 15
+      },
+      "effect_id": "chain_lightning_shred",
+      "effect_params": {
+        "every_n_attacks": 3,
+        "targets": 3,
+        "magic_damage": 65,
+        "mr_shred_pct": 0.25,
+        "shred_duration_sec": 4
+      },
+      "description": "Toutes les 3 attaques, une décharge de palpitations frappe 3 ennemis (65 dégâts magiques) et réduit leur RM de 25% pendant 4s."
+    },
+    {
+      "id": "embleme_archers_dimanche",
+      "name": "Emblème : Archers du Dimanche",
+      "icon_path": "assets/items/embleme_archers_dimanche.png",
+      "recipe": [
+        "canette_energy",
+        "as_de_pique"
+      ],
+      "unique": true,
+      "stats": {
+        "attack_speed": 0.12,
+        "crit_chance": 0.12
+      },
+      "effect_id": "grant_trait",
+      "effect_params": {
+        "trait_id": "archers_dimanche"
+      },
+      "description": "Le porteur obtient la classe Archers du Dimanche. Ne peut pas être équipé sur un Archer du Dimanche."
+    },
+    {
+      "id": "armure_tupperware",
+      "name": "Armure Tupperware Hermétique",
+      "icon_path": "assets/items/armure_tupperware.png",
+      "recipe": [
+        "couvercle_tupperware",
+        "couvercle_tupperware"
+      ],
+      "unique": false,
+      "stats": {
+        "armor": 45
+      },
+      "effect_id": "thorns_crit_reduce",
+      "effect_params": {
+        "crit_damage_reduction": 0.35,
+        "reflect_magic_damage": 85,
+        "radius_hex": 1,
+        "cooldown_sec": 2.0
+      },
+      "description": "Réduit les dégâts critiques subis de 35%. Quand frappé, renvoie 85 dégâts magiques aux ennemis adjacents (recharge 2s)."
+    },
+    {
+      "id": "bulle_anti_emmerdes",
+      "name": "Bulle Anti-Emmerdes",
+      "icon_path": "assets/items/bulle_anti_emmerdes.png",
+      "recipe": [
+        "couvercle_tupperware",
+        "casque_anti_bruit"
+      ],
+      "unique": false,
+      "stats": {
+        "armor": 20,
+        "mr": 20
+      },
+      "effect_id": "resists_per_attacker",
+      "effect_params": {
+        "armor_per_enemy": 12,
+        "mr_per_enemy": 12
+      },
+      "description": "Gagne +12 Armure et +12 RM pour chaque ennemi qui cible actuellement le porteur."
+    },
+    {
+      "id": "embleme_murailles_granit",
+      "name": "Emblème : Murailles de Granit",
+      "icon_path": "assets/items/embleme_murailles_granit.png",
+      "recipe": [
+        "couvercle_tupperware",
+        "gros_coussin"
+      ],
+      "unique": true,
+      "stats": {
+        "armor": 15,
+        "hp": 120
+      },
+      "effect_id": "grant_trait",
+      "effect_params": {
+        "trait_id": "murailles_granit"
+      },
+      "description": "Le porteur obtient la classe Murailles de Granit. Ne peut pas être équipé sur une Muraille de Granit."
+    },
+    {
+      "id": "thermos_blinde",
+      "name": "Thermos Blindé",
+      "icon_path": "assets/items/thermos_blinde.png",
+      "recipe": [
+        "couvercle_tupperware",
+        "tasse_cafe"
+      ],
+      "unique": false,
+      "stats": {
+        "armor": 20,
+        "mana_start": 15
+      },
+      "effect_id": "low_hp_shield_resists",
+      "effect_params": {
+        "hp_threshold_pct": 0.4,
+        "shield_hp_pct": 0.25,
+        "duration_sec": 5,
+        "bonus_armor": 20,
+        "bonus_mr": 20
+      },
+      "description": "Une fois par combat à 40% PV : gagne un bouclier de 25% PV max (5s) et +20 Armure/RM jusqu'à la fin du combat."
+    },
+    {
+      "id": "couvercle_porte_bonheur",
+      "name": "Couvercle Porte-Bonheur",
+      "icon_path": "assets/items/couvercle_porte_bonheur.png",
+      "recipe": [
+        "couvercle_tupperware",
+        "as_de_pique"
+      ],
+      "unique": false,
+      "stats": {
+        "armor": 20,
+        "crit_chance": 0.15
+      },
+      "effect_id": "damage_reduction_by_hp",
+      "effect_params": {
+        "hp_threshold_pct": 0.5,
+        "high_hp_dr": 0.15,
+        "low_hp_dr": 0.08
+      },
+      "description": "Réduit tous les dégâts subis de 15% tant que le porteur a plus de 50% PV, puis de 8% en dessous."
+    },
+    {
+      "id": "double_casque_isolation",
+      "name": "Double Casque Isolation Totale",
+      "icon_path": "assets/items/double_casque_isolation.png",
+      "recipe": [
+        "casque_anti_bruit",
+        "casque_anti_bruit"
+      ],
+      "unique": false,
+      "stats": {
+        "mr": 45
+      },
+      "effect_id": "periodic_hp_regen",
+      "effect_params": {
+        "heal_hp_pct": 0.05,
+        "interval_sec": 2.0
+      },
+      "description": "Régénère 5% des PV max du porteur toutes les 2 secondes."
+    },
+    {
+      "id": "coussin_sourd_muet",
+      "name": "Coussin du Sourd-Muet",
+      "icon_path": "assets/items/coussin_sourd_muet.png",
+      "recipe": [
+        "casque_anti_bruit",
+        "gros_coussin"
+      ],
+      "unique": true,
+      "stats": {
+        "mr": 20,
+        "hp": 150
+      },
+      "effect_id": "aura_shred_armor",
+      "effect_params": {
+        "radius_hex": 2,
+        "armor_shred_pct": 0.3,
+        "start_bonus_resists": 20,
+        "start_duration_sec": 10
+      },
+      "description": "Réduit de 30% l'Armure des ennemis à 2 cases et confère +20 Armure/RM pendant les 10 premières secondes du combat."
+    },
+    {
+      "id": "pause_cafe_tranquille",
+      "name": "Pause Café Tranquille",
+      "icon_path": "assets/items/pause_cafe_tranquille.png",
+      "recipe": [
+        "casque_anti_bruit",
+        "tasse_cafe"
+      ],
+      "unique": false,
+      "stats": {
+        "mr": 20,
+        "mana_start": 15
+      },
+      "effect_id": "adaptive_position_bonus",
+      "effect_params": {
+        "front_armor": 30,
+        "front_mr": 30,
+        "front_mana_on_hit": 4,
+        "back_ap": 20,
+        "back_mana_per_3s": 10
+      },
+      "description": "En 2 rangées avant : +30 Armure/RM et +4 mana quand frappé. En 2 rangées arrière : +20 AP et +10 mana toutes les 3s."
+    },
+    {
+      "id": "embleme_ombres_sournoises",
+      "name": "Emblème : Ombres Sournoises",
+      "icon_path": "assets/items/embleme_ombres_sournoises.png",
+      "recipe": [
+        "casque_anti_bruit",
+        "as_de_pique"
+      ],
+      "unique": true,
+      "stats": {
+        "mr": 15,
+        "crit_chance": 0.12
+      },
+      "effect_id": "grant_trait",
+      "effect_params": {
+        "trait_id": "ombres_sournoises"
+      },
+      "description": "Le porteur obtient la classe Ombres Sournoises. Ne peut pas être équipé sur une Ombre Sournoise."
+    },
+    {
+      "id": "matelas_king_size",
+      "name": "Matelas King Size",
+      "icon_path": "assets/items/matelas_king_size.png",
+      "recipe": [
+        "gros_coussin",
+        "gros_coussin"
+      ],
+      "unique": false,
+      "stats": {
+        "hp": 350
+      },
+      "effect_id": "bonus_max_hp_pct",
+      "effect_params": {
+        "hp_pct": 0.1
+      },
+      "description": "Confère +10% de PV max supplémentaires en début de combat."
+    },
+    {
+      "id": "embleme_gardiens_bonne_humeur",
+      "name": "Emblème : Gardiens de la Bonne Humeur",
+      "icon_path": "assets/items/embleme_gardiens_bonne_humeur.png",
+      "recipe": [
+        "gros_coussin",
+        "tasse_cafe"
+      ],
+      "unique": true,
+      "stats": {
+        "hp": 120,
+        "mana_start": 12
+      },
+      "effect_id": "grant_trait",
+      "effect_params": {
+        "trait_id": "gardiens_bonne_humeur"
+      },
+      "description": "Le porteur obtient la classe Gardiens de la Bonne Humeur. Ne peut pas être équipé sur un Gardien de la Bonne Humeur."
+    },
+    {
+      "id": "coussin_mauvais_perdant",
+      "name": "Coussin du Mauvais Perdant",
+      "icon_path": "assets/items/coussin_mauvais_perdant.png",
+      "recipe": [
+        "gros_coussin",
+        "as_de_pique"
+      ],
+      "unique": false,
+      "stats": {
+        "hp": 150,
+        "crit_chance": 0.15
+      },
+      "effect_id": "damage_amp_on_shield_hit",
+      "effect_params": {
+        "amp_pct": 0.25,
+        "duration_sec": 3
+      },
+      "description": "Frapper un ennemi protégé par un bouclier augmente les dégâts du porteur de 25% pendant 3s."
+    },
+    {
+      "id": "perfusion_cafeine",
+      "name": "Perfusion de Caféine",
+      "icon_path": "assets/items/perfusion_cafeine.png",
+      "recipe": [
+        "tasse_cafe",
+        "tasse_cafe"
+      ],
+      "unique": true,
+      "stats": {
+        "mana_start": 30
+      },
+      "effect_id": "mana_reduction_and_refund",
+      "effect_params": {
+        "mana_max_reduction": 10,
+        "mana_after_cast": 10,
+        "kill_amp_pct": 0.1,
+        "kill_amp_sec": 6
+      },
+      "description": "Réduit le mana max de 10, rend 10 mana après chaque sort et confère +10% de dégâts pendant 6s après une élimination."
+    },
+    {
+      "id": "cafe_calva",
+      "name": "Café-Calva du Dimanche",
+      "icon_path": "assets/items/cafe_calva.png",
+      "recipe": [
+        "tasse_cafe",
+        "as_de_pique"
+      ],
+      "unique": false,
+      "stats": {
+        "mana_start": 15,
+        "crit_chance": 0.15
+      },
+      "effect_id": "random_double_stats_or_vamp",
+      "effect_params": {
+        "ad": 15,
+        "ap": 15,
+        "omnivamp_pct": 0.15
+      },
+      "description": "Confère +15 AD, +15 AP et +15% vol de vie. En début de combat, double aléatoirement soit AD/AP, soit le vol de vie."
+    },
+    {
+      "id": "paquet_cartes_truquees",
+      "name": "Paquet de Cartes Truquées",
+      "icon_path": "assets/items/paquet_cartes_truquees.png",
+      "recipe": [
+        "as_de_pique",
+        "as_de_pique"
+      ],
+      "unique": true,
+      "stats": {
+        "crit_chance": 0.3
+      },
+      "effect_id": "random_two_combat_buffs",
+      "effect_params": {
+        "pick_count": 2,
+        "pool": [
+          {
+            "ad": 30
+          },
+          {
+            "ap": 35
+          },
+          {
+            "attack_speed": 0.3
+          },
+          {
+            "armor": 35,
+            "mr": 35
+          },
+          {
+            "hp": 350
+          }
+        ]
+      },
+      "description": "En début de combat, tire au sort 2 bonus majeurs parmi : +30 AD, +35 AP, +30% Vitesse d'attaque, +35 Armure/RM ou +350 PV."
+    }
+  ]
+}

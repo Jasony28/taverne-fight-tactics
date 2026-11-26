@@ -1,0 +1,16 @@
+{
+  "name": "taverne-fight-tactics",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Auto-battler web multijoueur (1 à 8 joueurs + bots) — Taverne Fight Tactics",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test/rules.test.js && node test/fullgame.test.js"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "express": "5.1.0",
+    "socket.io": "4.8.1"
+  }
+}
