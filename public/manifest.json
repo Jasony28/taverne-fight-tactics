@@ -1,0 +1,9 @@
+{
+  "name": "Taverne Fight Tactics",
+  "short_name": "Taverne FT",
+  "start_url": "/",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#14110f",
+  "theme_color": "#14110f"
+}

@@ -48,3 +48,13 @@ Voir le livrable Gemini étape 1, section 3 (`tavern_toast_shield`, `lazy_gold_g
 - `shop_modifier.cost_odds_bonus` : les points sont ajoutés au coût visé et retirés d'abord au coût 1,
   puis au coût 2, etc. Ne s'applique qu'aux coûts déjà disponibles à ce niveau (probabilité de base > 0).
 - `free_rerolls_per_round` et `reroll_cost` se cumulent.
+
+## Arène et plateau
+- Plateau joueur 4 × 7 (rangée 0 = ligne avant) ; arène 8 × 7 en coordonnées odd-r.
+- Camp 0 (« home ») : rangée de plateau r → rangée d'arène 4 + r, même colonne.
+  Camp 1 (« away ») : r → 3 − r et colonne c → 6 − c.
+- À l'affichage, l'arène est tournée de 180° quand le joueur est « away », pour qu'il voie son équipe en bas.
+
+## Interface
+- Le jeu se joue uniquement en paysage (écran « tourne ton téléphone » en portrait, plein écran + verrouillage
+  d'orientation quand le navigateur le permet).

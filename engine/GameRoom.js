@@ -143,6 +143,7 @@ class GameRoom extends EventEmitter {
       roundType: this.roundType(),
       phase: this.phase,
       endsAtTimestamp: this.phaseEndsAt,
+      serverNow: this.clock.now(),
       upcoming: this.upcomingRounds(),
     };
   }
@@ -687,6 +688,7 @@ class GameRoom extends EventEmitter {
       currentWave: c.waves[c.waveIndex] || [],
       waves: c.waves,
       waveEndsAt: c.waveEndsAt,
+      serverNow: this.clock.now(),
     };
   }
 
@@ -733,18 +735,23 @@ class GameRoom extends EventEmitter {
       p.disconnectedAt = null;
       p.botControlled = false;
     } else {
-      p.disconnectedAt = this.clock.now();
+      const since = this.clock.now();
+      p.disconnectedAt = since;
       if (this.status === 'playing') {
         const { timers_sec } = Data.get().balance;
         this.clock.setTimeout(() => {
-          if (!p.connected && this.status === 'playing') {
+          // Ignoré si le joueur est revenu entre-temps (même s'il s'est redéconnecté depuis).
+          if (!p.connected && p.disconnectedAt === since && this.status === 'playing') {
             p.botControlled = true;
             this.emit('takeover', { playerId: p.id });
             if (this.phase === 'planning') BotAI.decide(this, p, 22);
           }
         }, (timers_sec.disconnect_takeover * 1000) / this.timeScale);
       } else if (this.status === 'lobby') {
-        this.removeFromLobby(id);
+        // Dans le salon : 30 s de grâce (rechargement de page, réseau mobile).
+        this.clock.setTimeout(() => {
+          if (!p.connected && p.disconnectedAt === since && this.status === 'lobby') this.removeFromLobby(id);
+        }, 30000);
       }
     }
     this.broadcastState();
